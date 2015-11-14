@@ -1,0 +1,23 @@
+---
+title: "Car Accident"
+output: html_document
+---
+The first Scatter plot shows the relationship between the speed limit, road surface condition and number of casualties. From the graph, one can see most casualties occur during car speed of 30h/mile and bad (1) road condition.
+```{r}
+source("../03 R SQL Visualizations/scatter.R", echo = TRUE)
+```
+
+The crosstab shows the relationship between speed limit, road surface conditions and also the number of casualties per accident. From the graph, one can see that high casualties per accident (blue numbers) occur when the road condition is 1 and the speed limit is high.
+```{r}
+source("../03 R SQL Visualizations/crosstab.R", echo = TRUE)
+```
+
+The bar chart shows the effect of weather conditions and road conditions. From the graph, one can see that a majority of accidents happend in poor weather conditions (1). The big difference between individual bars and the average also shows that road condition has an affect on the occurance of accidents.
+```{r}
+source("../03 R SQL Visualizations/barchart.R", echo = TRUE)
+```
+
+The left joined data set shows the air pollution of each day in 2014. A simple analysis of the data shows that there seems to be no correlation between the air pollution and the number of casualties.
+```{r}
+source("../03 R SQL Visualizations/blendplot.R", echo = TRUE)
+```
