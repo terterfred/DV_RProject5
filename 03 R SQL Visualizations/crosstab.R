@@ -14,7 +14,9 @@ straff = ddply(
   Traffic,
   .(SPEED_LIMIT, ROAD_SURFACE_CONDITIONS),
   summarize,
-  counting=sum(NUMBER_OF_CASUALTIES)
+  counting=sum(NUMBER_OF_CASUALTIES),
+  cpv = sum(NUMBER_OF_CASUALTIES)/sum(NUMBER_OF_VEHICLES)
+  
 )
 
-ggplot(straff, aes(y =ROAD_SURFACE_CONDITIONS , x = SPEED_LIMIT)) + geom_text(aes(label = counting, color = counting))
+ggplot(straff, aes(y =ROAD_SURFACE_CONDITIONS , x = SPEED_LIMIT)) + geom_text(aes(label = counting, color = cpv))
